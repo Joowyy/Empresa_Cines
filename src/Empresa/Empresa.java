@@ -41,7 +41,18 @@ public class Empresa {
 	}
 	
 // ====================== METODOS ======================
-	public static Empresa empresaPrueba () {
+	public void mostrarEmpresa () {
+		
+		System.out.println("----------------------");
+		
+		System.out.println("Cod Empresa -> " + codEmpresa);
+		System.out.println("Cines -> " + cines);
+		
+		System.out.println("----------------------\n");
+		
+	}
+	
+	public static Empresa crearEmpresa () {
 		
 		ArrayList<Cine> cines = new ArrayList<Cine>();
 		Pelicula p = new Pelicula();

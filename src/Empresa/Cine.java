@@ -53,16 +53,14 @@ public class Cine {
 		System.out.println("----------------------");
 		
 		System.out.println("Estas son las facturas de luz no pagadas");
+		
 		for (Factura f : facturas) {
 			
-			// Imprime las facturas
-			f.mostrarFactura();
+			if (facturasLuzNoPagadas.getFirst().isPagado() == false) {
 				
-//			if (f.isPagado() == false) {
-//					
-//				
-//					
-//			}
+				f.mostrarFactura();
+				
+			}
 			
 		}
 		
