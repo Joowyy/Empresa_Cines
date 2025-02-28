@@ -41,4 +41,5 @@ public abstract class Factura {
 	
 // ====================== ATRIBUTOS ======================
 	public abstract void mostrarFactura ();
+	
 }

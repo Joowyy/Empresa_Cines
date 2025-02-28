@@ -10,7 +10,7 @@ public class FacturaLuz extends Factura {
 	public FacturaLuz() {
 		
 	}
-	FacturaLuz(String idFactura, String concepto, double cantidad, double consumo, boolean pagado) {
+	public FacturaLuz(String idFactura, String concepto, double cantidad, double consumo, boolean pagado) {
 		super(idFactura, concepto, cantidad);
 		this.consumo = consumo;
 		this.pagado = pagado;
@@ -43,4 +43,7 @@ public class FacturaLuz extends Factura {
 		System.out.println("----------------------");
 		
 	}
+	
+	
+	
 }

@@ -7,13 +7,13 @@ public class FacturaPelicula extends Factura{
 	private Pelicula pelicula;
 	
 // ====================== CONSTRUCTORES ======================
-	FacturaPelicula () {
+	public FacturaPelicula () {
 
 	}
-	FacturaPelicula (String idFactura, String concepto, double cantidad) {
+	public FacturaPelicula (String idFactura, String concepto, double cantidad) {
 		super(idFactura, concepto, cantidad);
 	}
-	FacturaPelicula(String idFactura, String concepto, double cantidad, int diasAlquiler, Pelicula pelicula) {
+	public FacturaPelicula(String idFactura, String concepto, double cantidad, int diasAlquiler, Pelicula pelicula) {
 		super(idFactura, concepto, cantidad);
 		this.diasAlquiler = diasAlquiler;
 		this.pelicula = pelicula;

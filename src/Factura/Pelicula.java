@@ -8,10 +8,10 @@ public class Pelicula {
 	private String nombrePelicula;
 	
 // ====================== CONSTRUCTORES ======================
-	Pelicula() {
+	public Pelicula() {
 		
 	}
-	Pelicula(int año, String idPelicula, String nombrePelicula) {
+	public Pelicula(int año, String idPelicula, String nombrePelicula) {
 		this.año = año;
 		this.idPelicula = idPelicula;
 		this.nombrePelicula = nombrePelicula;

@@ -3,6 +3,7 @@ package Empresa;
 import java.util.ArrayList;
 
 import Factura.Factura;
+import Factura.FacturaLuz;
 
 public class Cine {
 
@@ -11,10 +12,10 @@ public class Cine {
 	private ArrayList<Factura> facturas = new ArrayList<Factura>();
 	
 // ====================== CONSTRUCTORES ======================
-	Cine () {
+	public Cine () {
 		
 	}
-	Cine (String nombreCine, ArrayList<Factura> facturas) {
+	public Cine (String nombreCine, ArrayList<Factura> facturas) {
 		this.nombreCine = nombreCine;
 		this.facturas = facturas;
 	}
@@ -46,21 +47,28 @@ public class Cine {
 		
 	}
 	
-	public void obtenerFacturaLuzNoPagadas () {
-	
+	public ArrayList<FacturaLuz> obtenerFacturaLuzNoPagadas () {
+		ArrayList<FacturaLuz> facturasLuzNoPagadas = new ArrayList<FacturaLuz>();
+		
 		System.out.println("----------------------");
 		
 		System.out.println("Estas son las facturas de luz no pagadas");
 		for (Factura f : facturas) {
 			
 			// Imprime las facturas
-			System.out.println(f.getClass().getSimpleName());
 			f.mostrarFactura();
+				
+//			if (f.isPagado() == false) {
+//					
+//				
+//					
+//			}
 			
 		}
 		
 		System.out.println("----------------------");
 		
+		return facturasLuzNoPagadas;
 	}
 	
 }
