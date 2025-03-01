@@ -14,7 +14,6 @@ public class Main {
 		
 //		Introducimos todos los datos de una empresa entera.
 		Empresa empresa = Empresa.crearEmpresa();
-		Cine cineAux = new Cine();
 		
 		Scanner sc = new Scanner (System.in);
 		int opc;
@@ -31,16 +30,50 @@ public class Main {
 			
 			case '2':
 				
-				empresa.getCines();
+				Cine cineSeleccionado2 = elegirCine(empresa);
+				
+				if (cineSeleccionado2 != null) {
+				
+					cineSeleccionado2.mostrarFacturasLuz();
+					
+				}
+				
 				break;
 				
 			case '3':
+				
+				Cine cineSeleccionado3 = elegirCine(empresa);
+				
+				if (cineSeleccionado3 != null) {
+				
+					cineSeleccionado3.mostrarFacturasPelicula();
+					
+				}
 				
 				break;
 				
 			case '4':
 				
-				break;
+//				Recoge el retorno de la funcion 'elegirCine (Main)'
+				Cine cineSeleccionado4 = elegirCine(empresa);
+				
+				if (cineSeleccionado4 != null) {
+					
+//					Recoge el retorno del metodo 'obtenerFacturaLuzNoPagadas (Cine)'
+			        ArrayList<FacturaLuz> facturasNoPagadas = cineSeleccionado4.obtenerFacturaLuzNoPagadas();
+			        
+//			        Comprueba si el Array está vacia
+			        if (facturasNoPagadas.isEmpty()) {
+			        	
+			            System.out.println("No hay facturas de luz pendientes de pago para este cine.");
+			        }
+			        
+			    } else {
+			    	
+			        System.out.println("Cine no encontrado.");
+			        
+			    }
+			    break;
 				
 			case '5':
 				
@@ -69,22 +102,31 @@ public class Main {
 		
 	}
 	
-	public void elegirCine (Empresa empresa) {
+	public static Cine elegirCine (Empresa empresa) {
 		Scanner sc = new Scanner (System.in);
+		
+//		'for each' que imprime
+		for (Cine c2 : empresa.getCines()) {
+			
+			c2.mostrarCine();
+			
+		}
 		
 		System.out.println("¿Que cine quieres elegir? Introduce el nombre");
 		String cineUsuario = sc.nextLine();
 		
+//		'for each' que comprueba
 		for (Cine c : empresa.getCines()) {
-			
+
 			if (c.getNombreCine().equalsIgnoreCase(cineUsuario)) {
-				
-				c.mostrarCine();
+
+				return c;
 				
 			}
 			
 		}
 		
+		return null;
 	}
 
 }

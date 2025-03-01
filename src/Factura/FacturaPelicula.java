@@ -37,12 +37,12 @@ public class FacturaPelicula extends Factura{
 	@Override
 	public void mostrarFactura () {
 		
-		System.out.println("----------------------");
+		System.out.println("\n----------------------");
 		System.out.println("ID Factura -> " + idFactura);
 		System.out.println("Concepto -> " + concepto);
 		System.out.println("Cantidad -> " + cantidad);
 		System.out.println("Dias alquiler -> " + diasAlquiler);
-		System.out.println("Nombre pelicula ->" + pelicula);
+		System.out.println("Nombre pelicula -> " + pelicula);
 		System.out.println("----------------------");
 		
 	}

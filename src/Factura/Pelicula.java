@@ -42,11 +42,18 @@ public class Pelicula {
 // ====================== METODOS ======================
 	public void mostrarPelicula () {
 		
-		System.out.println("----------------------");
+		System.out.println("\n----------------------");
 		System.out.println("ID Pelicula -> " + idPelicula);
 		System.out.println("Año Pelicula -> " + año);
 		System.out.println("Nombre -> " + nombrePelicula);
 		System.out.println("----------------------");
+		
+	}
+	
+	@Override
+	public String toString () {
+		
+		return nombrePelicula;
 		
 	}
 	

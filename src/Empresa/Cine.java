@@ -38,7 +38,7 @@ public class Cine {
 // ====================== METODOS ======================
 	public void mostrarCine () {
 		
-		System.out.println("----------------------");
+		System.out.println("\n----------------------");
 		
 		System.out.println("Nombre cine -> " + nombreCine);
 		System.out.println("Facturas -> " + facturas);
@@ -47,22 +47,63 @@ public class Cine {
 		
 	}
 	
-	public ArrayList<FacturaLuz> obtenerFacturaLuzNoPagadas () {
-		ArrayList<FacturaLuz> facturasLuzNoPagadas = new ArrayList<FacturaLuz>();
+	public void mostrarFacturasPelicula() {
 		
-		System.out.println("----------------------");
-		
+		System.out.println("\n----------------------");
 		System.out.println("Estas son las facturas de luz no pagadas");
 		
 		for (Factura f : facturas) {
 			
-			if (facturasLuzNoPagadas.getFirst().isPagado() == false) {
+			if (f.getClass().getSimpleName().equals("FacturaPelicula")) {
 				
 				f.mostrarFactura();
 				
 			}
 			
 		}
+		
+	}
+	
+	public void mostrarFacturasLuz () {
+		
+		System.out.println("\n----------------------");
+		System.out.println("Estas son las facturas de luz no pagadas");
+		
+		for (Factura f : facturas) {
+			
+			if (f.getClass().getSimpleName().equals("FacturaLuz")) {
+				
+				f.mostrarFactura();
+				
+			}
+			
+		}
+		
+	}
+	
+	public ArrayList<FacturaLuz> obtenerFacturaLuzNoPagadas () {
+		ArrayList<FacturaLuz> facturasLuzNoPagadas = new ArrayList<FacturaLuz>();
+		
+		System.out.println("\n----------------------");
+		System.out.println("Estas son las facturas de luz no pagadas");
+		
+		for (Factura f : facturas) {
+			
+	        // Verificamos si la factura es de tipo FacturaLuz usando getClass().getSimpleName()
+	        if (f.getClass().getSimpleName().equals("FacturaLuz")) {
+	        	
+	            FacturaLuz facturaLuz = (FacturaLuz) f; // Hacemos el casting seguro
+	            
+	            if (facturaLuz.isPagado() == false) {
+	            	
+	                facturasLuzNoPagadas.add(facturaLuz);
+	                facturaLuz.mostrarFactura(); // Mostrar la factura
+	                
+	            }
+	            
+	        }
+	        
+	    }
 		
 		System.out.println("----------------------");
 		

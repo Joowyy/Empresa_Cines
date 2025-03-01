@@ -34,12 +34,12 @@ public class FacturaLuz extends Factura {
 	@Override
 	public void mostrarFactura () {
 		
-		System.out.println("----------------------");
+		System.out.println("\n----------------------");
 		System.out.println("ID Factura -> " + idFactura);
 		System.out.println("Concepto -> " + concepto);
 		System.out.println("Cantidad -> " + cantidad);
 		System.out.println("Consumo KW -> " + consumo);
-		System.out.println("Factura pagada ->" + pagado);
+		System.out.println("Factura pagada -> " + pagado);
 		System.out.println("----------------------");
 		
 	}
