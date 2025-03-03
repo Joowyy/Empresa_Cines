@@ -52,6 +52,8 @@ public class Empresa {
 		
 	}
 	
+	
+	
 	public static Empresa crearEmpresa () {
 		
 		ArrayList<Cine> cines = new ArrayList<Cine>();

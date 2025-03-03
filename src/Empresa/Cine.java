@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import Factura.Factura;
 import Factura.FacturaLuz;
+import Factura.FacturaPelicula;
 
 public class Cine {
 
@@ -81,6 +82,21 @@ public class Cine {
 		
 	}
 	
+	public double totalFacturasCine () {
+		double totalFacturaCine = 0.0;
+		
+		System.out.println("\n----------------------");
+		
+		for (Factura f : facturas) {
+			
+			totalFacturaCine += f.getCantidad();
+			
+		}
+		
+		System.out.println("El total de facturas en el cine es -> " + totalFacturaCine);
+		return totalFacturaCine;
+	}
+	
 	public ArrayList<FacturaLuz> obtenerFacturaLuzNoPagadas () {
 		ArrayList<FacturaLuz> facturasLuzNoPagadas = new ArrayList<FacturaLuz>();
 		
@@ -108,6 +124,26 @@ public class Cine {
 		System.out.println("----------------------");
 		
 		return facturasLuzNoPagadas;
+	}
+	
+	public double calcularImporteFacturasPelicula () {
+		double precioTotal = 0.0;
+
+		for (Factura f : facturas) {
+
+	        // Verificamos si la factura es de tipo FacturaLuz usando getClass().getSimpleName()
+	        if (f.getClass().getSimpleName().equals("FacturaPelicula")) {
+	        	
+	        	f.mostrarFactura();
+	            precioTotal += f.getCantidad();
+	            
+	        }
+	        
+	    }
+		
+		System.out.println("El precio total de las facturas será -> " + precioTotal);
+		System.out.println("----------------------\n");
+		return precioTotal;
 	}
 	
 }

@@ -77,6 +77,14 @@ public class Main {
 				
 			case '5':
 				
+				Cine cineSeleccionado5 = elegirCine(empresa);
+				
+				if (cineSeleccionado5 != null) {
+					
+					cineSeleccionado5.calcularImporteFacturasPelicula();
+					
+				}
+				
 				break;
 				
 			case '6':
