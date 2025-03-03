@@ -1,5 +1,6 @@
 package Empresa;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import Factura.Factura;
@@ -52,7 +53,45 @@ public class Empresa {
 		
 	}
 	
+	public double calcularImporteFacturasEmpresa () {
+		DecimalFormat df = new DecimalFormat("#0.00");
+		double totalFacturasEmpresa = 0.0;
+
+		for (Cine c : cines) {
+			
+			double totalCine = c.totalFacturasCine();
+			totalFacturasEmpresa += totalCine;
+			
+		}
+		
+		System.out.println("\nEl total a pagar la empresa es -> " + df.format(totalFacturasEmpresa));
+		System.out.println("----------------------\n");
+		return totalFacturasEmpresa;
+	}
 	
+	public boolean pagarRecibosLuz (Cine cineSeleccionado7) {
+		boolean facturasSinPagar = false;
+		
+		for (Factura f : cineSeleccionado7.getFacturas()) {
+
+			if (f instanceof FacturaLuz) {
+	            
+				FacturaLuz facturaLuz = (FacturaLuz) f;
+	            
+	            if (facturaLuz.isPagado() == false) {
+	            	
+	                facturaLuz.setPagado(true);
+	                facturasSinPagar = true;
+	                facturaLuz.mostrarFactura();
+	                
+	            }
+	            
+	        }
+
+		}
+		
+		return facturasSinPagar;
+	}
 	
 	public static Empresa crearEmpresa () {
 		

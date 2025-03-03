@@ -89,9 +89,18 @@ public class Main {
 				
 			case '6':
 				
+				empresa.calcularImporteFacturasEmpresa();
 				break;
 				
 			case '7':
+				
+				Cine cineSeleccionado7 = elegirCine(empresa);
+				
+				if (cineSeleccionado7 != null) {
+					
+					empresa.pagarRecibosLuz(cineSeleccionado7);
+					
+				}
 				
 				break;
 				
@@ -103,11 +112,7 @@ public class Main {
 			}
 			
 		} while (opc != '8');
-		
-//		Empresa ePrueba = Empresa.empresaPrueba();
-//		
-//		System.out.println(ePrueba.empresaPrueba());
-		
+
 	}
 	
 	public static Cine elegirCine (Empresa empresa) {

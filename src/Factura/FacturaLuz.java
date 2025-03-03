@@ -44,6 +44,11 @@ public class FacturaLuz extends Factura {
 		
 	}
 	
-	
+	@Override
+	public String toString () {
+		
+		return "Factura Luz";
+		
+	}
 	
 }

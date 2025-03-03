@@ -85,11 +85,27 @@ public class Cine {
 	public double totalFacturasCine () {
 		double totalFacturaCine = 0.0;
 		
-		System.out.println("\n----------------------");
+		System.out.println("----------------------");
 		
 		for (Factura f : facturas) {
 			
-			totalFacturaCine += f.getCantidad();
+			if (f instanceof FacturaLuz) {
+	            
+				FacturaLuz facturaLuz = (FacturaLuz) f;
+	            
+	            if (facturaLuz.isPagado() == false) {
+	            	
+	            	totalFacturaCine += f.getCantidad();
+	                
+	            }
+	            
+	        }
+			
+			if (f instanceof FacturaPelicula) {
+
+				totalFacturaCine += f.getCantidad();
+	            
+	        }
 			
 		}
 		
@@ -144,6 +160,13 @@ public class Cine {
 		System.out.println("El precio total de las facturas será -> " + precioTotal);
 		System.out.println("----------------------\n");
 		return precioTotal;
+	}
+	
+	@Override
+	public String toString () {
+		
+		return nombreCine;
+		
 	}
 	
 }

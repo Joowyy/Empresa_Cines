@@ -47,4 +47,11 @@ public class FacturaPelicula extends Factura{
 		
 	}
 	
+	@Override
+	public String toString () {
+		
+		return "Factura Pelicula";
+		
+	}
+	
 }

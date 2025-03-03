@@ -42,4 +42,11 @@ public abstract class Factura {
 // ====================== ATRIBUTOS ======================
 	public abstract void mostrarFactura ();
 	
+	@Override
+	public String toString () {
+		
+		return "ID -> " + idFactura;
+		
+	}
+	
 }
